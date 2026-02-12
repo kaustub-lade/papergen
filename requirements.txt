@@ -1,57 +1,46 @@
 # Core Framework
-streamlit==1.31.0
-streamlit-option-menu==0.3.12
-streamlit-aggrid==0.3.4
-streamlit-extras==0.3.6
-streamlit-authenticator==0.2.3
+streamlit>=1.32.0
+streamlit-option-menu>=0.3.12
+streamlit-aggrid>=0.3.4
+streamlit-extras>=0.3.6
+streamlit-authenticator>=0.2.3
 
 # Document Processing
-pytesseract==0.3.10
-pdf2image==1.16.3
-Pillow==10.2.0
-PyPDF2==3.0.1
-reportlab==4.0.9
-fpdf2==2.7.7
+pytesseract>=0.3.10
+pdf2image>=1.16.3
+Pillow>=10.3.0
+PyPDF2>=3.0.1
+reportlab>=4.1.0
+fpdf2>=2.7.7
 
 # AI/ML - LLM and Orchestration
-langchain==0.1.9
-langchain-groq==0.0.1
-langchain-community==0.0.29
-groq==0.4.2
-openai==1.12.0  # Optional alternative LLM provider
+langchain>=0.1.9
+langchain-groq>=0.0.1
+langchain-community>=0.0.29
+groq>=0.4.2
+openai>=1.12.0
 
 # Embeddings & Vector DB
-chromadb==0.4.22
-sentence-transformers==2.3.1
-faiss-cpu==1.7.4
+chromadb>=0.4.22
+sentence-transformers>=2.3.1
+faiss-cpu>=1.8.0
 
 # ML/NLP
-scikit-learn==1.4.0
-spacy==3.7.2
-transformers==4.37.2
-torch==2.2.0  # For transformers
-nltk==3.8.1
+scikit-learn>=1.4.0
+nltk>=3.8.1
 
 # Data & Visualization
-pandas==2.2.0
-numpy==1.26.3
-plotly==5.18.0
-altair==5.2.0
-matplotlib==3.8.2
-seaborn==0.13.2
+pandas>=2.2.0
+numpy<2.0.0
+plotly>=5.18.0
+altair>=5.2.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
 
 # Utilities
-python-dotenv==1.0.1
-pyyaml==6.0.1
-regex==2023.12.25
-tqdm==4.66.1
-requests==2.31.0
-tenacity==8.2.3  # For retry logic
-
-# Testing (Optional)
-pytest==8.0.0
-pytest-cov==4.1.0
-
-# Code Quality (Optional)
-black==24.1.1
-flake8==7.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+regex>=2023.12.25
+tqdm>=4.66.0
+requests>=2.31.0
+tenacity>=8.2.0
