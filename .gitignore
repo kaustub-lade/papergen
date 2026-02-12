@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual Environment
+venv/
+env/
+ENV/
+venv.bak/
+
+# Environment Variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data
+data/syllabi/*
+!data/syllabi/.gitkeep
+data/past_papers/*
+!data/past_papers/.gitkeep
+data/generated_papers/*
+!data/generated_papers/.gitkeep
+data/chromadb/
+
+# Models
+models/*
+!models/.gitkeep
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# Logs
+logs/
+*.log
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Temporary Files
+*.tmp
+*.bak
+tmp/
+temp/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3

@@ -1,0 +1,127 @@
+# Hybrid Question Paper Generation System Configuration
+
+# Application Settings
+app:
+  name: "Hybrid Question Paper Generator"
+  version: "1.0.0"
+  port: 8501
+  max_upload_size: 50  # MB
+
+# Bloom's Taxonomy Default Distribution (%)
+bloom_taxonomy:
+  remember: 20
+  understand: 25
+  apply: 25
+  analyze: 15
+  evaluate: 10
+  create: 5
+
+# Priority Score Calculation Weights
+priority_weights:
+  syllabus_weight: 0.6
+  historical_frequency: 0.4
+
+# LLM Configuration
+llm:
+  parser:
+    model: "llama-3.1-8b-instant"
+    temperature: 0.3
+    max_tokens: 1024
+  generator:
+    model: "llama-3.3-70b-versatile"
+    temperature: 0.7
+    max_tokens: 2048
+  retry:
+    max_attempts: 3
+    delay_seconds: 2
+
+# OCR Configuration
+ocr:
+  default_engine: "tesseract"  # Options: tesseract, nanonets
+  tesseract:
+    language: "eng"
+    config: "--psm 6"  # Page segmentation mode
+  watermark_patterns:
+    - "copyright"
+    - "confidential"
+    - "draft"
+    - "watermark"
+
+# Novelty Filter Settings
+novelty_filter:
+  similarity_threshold: 0.85
+  embedding_model: "all-MiniLM-L6-v2"
+  
+# Pattern Discovery
+pattern_discovery:
+  min_pattern_frequency: 2
+  clustering_algorithm: "kmeans"
+  n_clusters: 10
+
+# ChromaDB Configuration
+chromadb:
+  collection_name: "question_papers"
+  embedding_function: "sentence-transformers"
+  distance_metric: "cosine"
+
+# PDF Generation Settings
+pdf:
+  page_size: "A4"
+  margin:
+    top: 72
+    bottom: 72
+    left: 72
+    right: 72
+  font:
+    family: "Helvetica"
+    size:
+      title: 16
+      heading: 14
+      body: 12
+      caption: 10
+  header:
+    include: true
+    text: "Question Paper"
+  footer:
+    include: true
+    page_numbers: true
+
+# Analytics Settings
+analytics:
+  track_generation: true
+  track_quality_score: true
+  history_days: 90
+
+# Question Generation Constraints
+generation:
+  min_marks_per_question: 1
+  max_marks_per_question: 20
+  min_questions_per_set: 15
+  max_questions_per_set: 50
+  require_coverage: true
+  coverage_threshold: 0.8  # 80% syllabus coverage
+
+# Topic Importance Estimation
+topic_importance:
+  algorithm: "logistic_regression"
+  features:
+    - "syllabus_weight"
+    - "historical_frequency"
+    - "word_count"
+    - "position_in_syllabus"
+
+# Quality Assurance
+quality:
+  check_novelty: true
+  check_coverage: true
+  check_balance: true
+  check_difficulty: true
+  min_quality_score: 7.0  # Out of 10
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/app.log"
+  max_size_mb: 10
+  backup_count: 5
